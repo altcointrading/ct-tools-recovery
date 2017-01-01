@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorythmic arbitrage trading
+title: Algorithmic arbitrage trading
 categories: [trading, algo]
 tags: [bots]
 permalink: arbitrage-algo/
