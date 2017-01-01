@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tickets and API endpoints with data for widgets</title>
+	
+	<meta name="author" content="Trading Fanbois">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="https://cryptotradingtools.com/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cryptotradingtools.com/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://cryptotradingtools.com/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="https://cryptotradingtools.com/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="https://cryptotradingtools.com/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/tradingfanbois">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:admin@bestbitcoinexchange.co">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="https://cryptotradingtools.com/">
+				<img src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
+				Crypto Trading Tools
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="https://cryptotradingtools.com/">Home</a></li>
+				<li><a href="https://cryptotradingtools.com/categories/">Categories</a></li>
+				<li><a href="https://cryptotradingtools.com/tags/">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="https://cryptotradingtools.com/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="https://cryptotradingtools.com/categories/"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="https://cryptotradingtools.com/tags/"><i class="fa fa-tags"></i>Tags</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="https://cryptotradingtools.com/">
+		<img src="/img/cryptotradingtools.jpeg" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="https://cryptotradingtools.com/">Crypto Trading Tools</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Repo with tools and scripts for bitcoin and altcoin trading.
+	<hr>
+		<p><a href="/trading-stats">Historical Data: Best Days To Trade</a></p>
+		<p><a href="/datasets">Datasets for backtesting and sentiment</a></p>
+		<p><a href="/widgets">Tickers, data for widgets</a></p>
+		<p><a href="/bots">Trading and lending bots</a></p>
+	<hr>
+		<p><a href="/">All Tools</a></p>
+ 		<p><a target="_blank" href="/submit">Know a repo that isn't here?</a></p>
+<hr>
+
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/tradingfanbois">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:admin@bestbitcoinexchange.co">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://cryptotradingtools.com/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>Tickets and API endpoints with data for widgets </h1>
+</div>
+
+<article>
+  <iframe data-aa="178999" src="https://ad.a-ads.com/178999?size=728x90" scrolling="no" style="width:728px; height:90px; border:0px; padding:0;overflow:hidden" allowtransparency="true" frameborder="0"></iframe>
+</article>
+
+<p>You can also capture the data at an interval that suits you and use them for analysis or backtesting later once you’ve collected enough. Exchanges never provide too much of historical data and most of the repos or APIs here are free. They will be shut down one day, you should start collecting your own data if you can. A very easy way to do that is offered by <a href="https://firebase.com">Firebase</a> for instance.</p>
+
+<hr />
+
+<p><img src="/img/cmc-widget.jpeg" alt="coin market cap widget" /></p>
+
+<h2 id="coin-market-cap-api">Coin Market Cap API</h2>
+
+<p>Bitcoin and altcoins ticker and stats API. Available via https, updated minutely (?). It’s public JSON, easily parsed. API is well documented: <a href="http://coinmarketcap.com/api/">http://coinmarketcap.com/api/</a></p>
+
+<p>It’s pretty cool for  simple website widgets - see image above. This is the code that does it:</p>
+
+<p>The JSON API response</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="ss">id: </span><span class="s2">"bitcoin"</span><span class="p">,</span>
+      <span class="ss">name: </span><span class="s2">"Bitcoin"</span><span class="p">,</span>
+      <span class="ss">symbol: </span><span class="s2">"BTC"</span><span class="p">,</span>
+      <span class="ss">rank: </span><span class="mi">1</span><span class="p">,</span>
+      <span class="ss">price_usd: </span><span class="mi">448</span><span class="o">.</span><span class="mi">529</span><span class="p">,</span>
+      <span class="mi">24</span><span class="ss">h_volume_usd: </span><span class="mi">61357200</span><span class="p">,</span>
+      <span class="ss">market_cap_usd: </span><span class="mi">6990918766</span><span class="p">,</span>
+      <span class="ss">available_supply: </span><span class="mi">15586325</span><span class="p">,</span>
+      <span class="ss">total_supply: </span><span class="mi">15586325</span><span class="p">,</span>
+      <span class="ss">percent_change_1h: </span><span class="mi">0</span><span class="o">.</span><span class="mo">05</span><span class="p">,</span>
+      <span class="ss">percent_change_24h: </span><span class="mi">0</span><span class="o">.</span><span class="mi">23</span><span class="p">,</span>
+      <span class="ss">percent_change_7d: </span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">13</span>
+    <span class="p">}</span>
+  <span class="p">]</span></code></pre></figure>
+
+<p>JavaScript parser to show a line of data in a website’s header</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">loadJSON</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">xobj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+  <span class="nx">xobj</span><span class="p">.</span><span class="nx">overrideMimeType</span><span class="p">(</span><span class="s2">"application/json"</span><span class="p">);</span>
+  <span class="nx">xobj</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'https://jsonp.afeld.me/?url=https://api.coinmarketcap.com/v1/ticker/bitcoin/'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="nx">xobj</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">xobj</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">xobj</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="s2">"200"</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">callback</span><span class="p">(</span><span class="nx">xobj</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">};</span>
+  <span class="nx">xobj</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">loadJSON</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">actual_JSON</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"topbar"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span>
+    <span class="s2">"&lt;small&gt;BTCUSD: "</span> <span class="o">+</span> <span class="nx">actual_JSON</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"price_usd"</span><span class="p">]</span>
+    <span class="o">+</span> <span class="s2">"&lt;em&gt; | Change 1h: "</span> <span class="o">+</span>  <span class="nx">actual_JSON</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"percent_change_1h"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"%"</span>
+    <span class="o">+</span> <span class="s2">" | Change 24h: "</span> <span class="o">+</span>  <span class="nx">actual_JSON</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"percent_change_24h"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"%"</span>
+    <span class="o">+</span> <span class="s2">" | Change 7d: "</span> <span class="o">+</span>  <span class="nx">actual_JSON</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"percent_change_7d"</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"%&lt;/em&gt;&lt;/small&gt;"</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nx">init</span><span class="p">();</span></code></pre></figure>
+
+<h2 id="poloniex-altcoin-price-ticker">Poloniex altcoin price ticker</h2>
+
+<p>Updated minutely</p>
+
+<p>No access limit</p>
+
+<p>JSON public endpoint</p>
+
+<p><a href="http://api.altcoinwisdom.com/ticker.json">http://api.altcoinwisdom.com/ticker.json</a></p>
+
+<p>For separate coin pair tickets see URIs at <a href="http://api.altcoinwisdom.com/">http://api.altcoinwisdom.com/</a>.</p>
+
+<p>Also as HTML widget: <a href="https://jsonp.afeld.me/?url=http://api.altcoinwisdom.com/widget.html">black letters on white</a> or <a href="https://jsonp.afeld.me/?url=http://api.altcoinwisdom.com/widget-white.html">white letters on transparent background</a></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span>
+<span class="s2">"0.02797000"</span><span class="p">,</span>
+<span class="o">-</span><span class="mi">8</span>
+<span class="p">]</span></code></pre></figure>
+
+<h2 id="multiple-charts-on-a-single-screen">Multiple charts on a single screen</h2>
+
+<p><a href="http://altcointrading.github.io/">http://altcointrading.github.io/</a></p>
+
+<p>The site only has the HTML connected to OkCoin futures api (only latest data, no historical), some altcoin price widget and two tradingview charts embedded next to each other. In this case it’s BTC price in USD and Yuan which makes it easier to observe if a breakout happened in the east but not yet on the west.</p>
+
+<p>If you are able to edit HTML you can embed any chart you want.</p>
+
+<p>If your computer has enough RAM you can then use this page as a GNOME desktop widget:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">WebKit</span><span class="p">,</span> <span class="n">Gtk</span><span class="p">,</span> <span class="n">Gdk</span><span class="p">,</span> <span class="n">Gio</span><span class="p">,</span> <span class="n">GLib</span>
+<span class="kn">import</span> <span class="nn">signal</span><span class="o">,</span> <span class="nn">os</span>
+
+<span class="k">class</span> <span class="nc">MainWin</span><span class="p">(</span><span class="n">Gtk</span><span class="o">.</span><span class="n">Window</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Gtk</span><span class="o">.</span><span class="n">Window</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">skip_pager_hint</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">skip_taskbar_hint</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_wmclass</span><span class="p">(</span><span class="s">"sildesktopwidget"</span><span class="p">,</span><span class="s">"sildesktopwidget"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_type_hint</span><span class="p">(</span><span class="n">Gdk</span><span class="o">.</span><span class="n">WindowTypeHint</span><span class="o">.</span><span class="n">DOCK</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_size_request</span><span class="p">(</span><span class="mi">1120</span><span class="p">,</span><span class="mi">650</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_keep_below</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+        <span class="c">#screen properties</span>
+        <span class="n">screen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_screen</span><span class="p">()</span>
+        <span class="n">rgba</span> <span class="o">=</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_rgba_visual</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_visual</span><span class="p">(</span><span class="n">rgba</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">override_background_color</span><span class="p">(</span><span class="n">Gtk</span><span class="o">.</span><span class="n">StateFlags</span><span class="o">.</span><span class="n">NORMAL</span><span class="p">,</span> <span class="n">Gdk</span><span class="o">.</span><span class="n">RGBA</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+        <span class="c">#Add all the parts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">WebKit</span><span class="o">.</span><span class="n">WebView</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">set_transparent</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">override_background_color</span><span class="p">(</span><span class="n">Gtk</span><span class="o">.</span><span class="n">StateFlags</span><span class="o">.</span><span class="n">NORMAL</span><span class="p">,</span> <span class="n">Gdk</span><span class="o">.</span><span class="n">RGBA</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">props</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">props</span><span class="o">.</span><span class="n">enable_default_context_menu</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">load_uri</span><span class="p">(</span><span class="s">"http://altcointrading.github.io/"</span><span class="p">)</span>
+
+        <span class="n">box</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Box</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+        <span class="n">box</span><span class="o">.</span><span class="n">pack_start</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_decorated</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"destroy"</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">q</span><span class="p">:</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show_all</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">refresh_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">args</span>
+    <span class="n">mainwin</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nb">reload</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">file_changed</span><span class="p">(</span><span class="n">monitor</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">unknown</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="c"># reload</span>
+    <span class="n">GLib</span><span class="o">.</span><span class="n">timeout_add_seconds</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">refresh_file</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">gio_file</span> <span class="o">=</span> <span class="n">Gio</span><span class="o">.</span><span class="n">File</span><span class="o">.</span><span class="n">new_for_path</span><span class="p">(</span><span class="s">"http://altcointrading.github.io/"</span><span class="p">)</span>
+    <span class="n">monitor</span> <span class="o">=</span> <span class="n">gio_file</span><span class="o">.</span><span class="n">monitor_file</span><span class="p">(</span><span class="n">Gio</span><span class="o">.</span><span class="n">FileMonitorFlags</span><span class="o">.</span><span class="n">NONE</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">monitor</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"changed"</span><span class="p">,</span> <span class="n">file_changed</span><span class="p">)</span>
+
+    <span class="n">mainwin</span> <span class="o">=</span> <span class="n">MainWin</span><span class="p">()</span>
+    <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIG_DFL</span><span class="p">)</span> <span class="c"># make ^c work</span>
+    <span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span></code></pre></figure>
+
+<h2 id="okcoin-futures-html-widget">OkCoin Futures HTML widget</h2>
+
+<p>You won’t see much since the writing is white but it’s latest OkCasino BTC futures data as a HTML widget. It’s updated every minute.</p>
+
+<p><code class="highlighter-rouge">http://btc-jzgs.rhcloud.com/thisweek.html</code></p>
+
+<p><code class="highlighter-rouge">http://btc-jzgs.rhcloud.com/nextweek.html</code></p>
+
+<p><code class="highlighter-rouge">http://btc-jzgs.rhcloud.com/quarter.html</code></p>
+
+<p>You can include the widget via an iframe. Use Proxy if you need HTTPS.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rite"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left"</span> <span class="na">style=</span><span class="s">"margin-left:10px"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"https://jsonp.afeld.me/?url=http://btc-jzgs.rhcloud.com/thisweek.html"</span> <span class="na">width=</span><span class="s">"240"</span> <span class="na">height=</span><span class="s">"230"</span> <span class="na">frameborder=</span><span class="s">"0"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"https://jsonp.afeld.me/?url=http://btc-jzgs.rhcloud.com/nextweek.html"</span> <span class="na">width=</span><span class="s">"250"</span> <span class="na">height=</span><span class="s">"230"</span> <span class="na">frameborder=</span><span class="s">"0"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"https://jsonp.afeld.me/?url=http://btc-jzgs.rhcloud.com/quarter.html"</span> <span class="na">width=</span><span class="s">"230"</span> <span class="na">height=</span><span class="s">"230"</span> <span class="na">frameborder=</span><span class="s">"0"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				1HunGrY83J2yN9KYkURziNJtVcsvoXW4iP || &copy; 2016-2017 <a target="_blank" href="https://bestbitcoinexchange.co">Trading Fanbois</a> 
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="https://cryptotradingtools.com/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cryptotradingtools.com/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cryptotradingtools.com/assets/js/app.js"></script>
+
+</body>
+</html>
+
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71937981-3', 'auto');
+  ga('send', 'pageview');
+</script>
+

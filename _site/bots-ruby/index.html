@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>(Ruby) Bitcoin Trading Bots in Ruby</title>
+	
+	<meta name="description" content="Components / gems needed when writing bitcoin trading bot in Ruby.">
+	
+	<meta name="author" content="Trading Fanbois">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="https://cryptotradingtools.com/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cryptotradingtools.com/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://cryptotradingtools.com/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="https://cryptotradingtools.com/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="https://cryptotradingtools.com/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/tradingfanbois">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:admin@bestbitcoinexchange.co">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="https://cryptotradingtools.com/">
+				<img src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
+				Crypto Trading Tools
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="https://cryptotradingtools.com/">Home</a></li>
+				<li><a href="https://cryptotradingtools.com/categories/">Categories</a></li>
+				<li><a href="https://cryptotradingtools.com/tags/">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="https://cryptotradingtools.com/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="https://cryptotradingtools.com/categories/"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="https://cryptotradingtools.com/tags/"><i class="fa fa-tags"></i>Tags</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="https://cryptotradingtools.com/">
+		<img src="/img/cryptotradingtools.jpeg" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="https://cryptotradingtools.com/">Crypto Trading Tools</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Repo with tools and scripts for bitcoin and altcoin trading.
+	<hr>
+		<p><a href="/trading-stats">Historical Data: Best Days To Trade</a></p>
+		<p><a href="/datasets">Datasets for backtesting and sentiment</a></p>
+		<p><a href="/widgets">Tickers, data for widgets</a></p>
+		<p><a href="/bots">Trading and lending bots</a></p>
+	<hr>
+		<p><a href="/">All Tools</a></p>
+ 		<p><a target="_blank" href="/submit">Know a repo that isn't here?</a></p>
+<hr>
+
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/tradingfanbois">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:admin@bestbitcoinexchange.co">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://cryptotradingtools.com/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>(Ruby) Bitcoin Trading Bots in Ruby </h1>
+</div>
+
+<article>
+  <iframe data-aa="178999" src="https://ad.a-ads.com/178999?size=728x90" scrolling="no" style="width:728px; height:90px; border:0px; padding:0;overflow:hidden" allowtransparency="true" frameborder="0"></iframe>
+</article>
+
+<article>
+
+	<div class="col-sm-10">
+	 <span class="post-date">
+	   
+	   May
+	   23rd,
+	     
+	   2016
+	 </span>
+	  <div class="article_body">
+
+      <p><a target="_blank" href="https://github.com/rivella50/talib-ruby" class="btn btn-down"><i class="fa fa-github fa-lg"></i> Download sourcecode</a></p>
+
+	  <p>What you need is a technical analysis library, at first. There is an old library for C (<a href="http://ta-lib.org/">ta-lib</a>) that was created for stock markets and has all the technical indicators. There are gems that are supposed to port this library but they were developed years ago by someone for free. It is not guaranteed they will work - they probably won’t with newer versions of Ruby.</p>
+
+<p>There is also a project implementing linear algebra libraries into ruby if you want to do some legwork though.</p>
+
+<p>SciRuby <a href="http://sciruby.com/">http://sciruby.com/</a></p>
+
+<p>Once you have the math figured out, there is plenty of gems to do the exchange API connection.</p>
+
+<h2 id="technical-analysis-gems">Technical analysis gems</h2>
+
+<ul>
+<li>talib-ruby</li>
+</ul>
+
+<p><a href="https://github.com/rivella50/talib-ruby">https://github.com/rivella50/talib-ruby</a></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="c1">#Calculation of Moving Average (MA):</span>
+
+<span class="nb">require</span> <span class="s1">'rubygems'</span>
+<span class="nb">require</span> <span class="s1">'talib_ruby'</span>
+
+<span class="c1"># init input data</span>
+<span class="n">a</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span>
+<span class="mi">10</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">a</span><span class="p">.</span><span class="nf">push</span> <span class="n">i</span><span class="p">.</span><span class="nf">to_f</span> <span class="p">}</span>
+
+<span class="mi">10</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">k</span><span class="o">|</span>
+<span class="n">b</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="no">TaLib</span><span class="o">::</span><span class="no">Function</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"MA"</span><span class="p">)</span>
+<span class="c1"># setup input parameter</span>
+<span class="n">l</span><span class="p">.</span><span class="nf">in_real</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># setup optional parameter</span>
+<span class="n">l</span><span class="p">.</span><span class="nf">opt_int</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">k</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># setup output parameter</span>
+<span class="n">l</span><span class="p">.</span><span class="nf">out_real</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="n">lookback</span> <span class="o">=</span> <span class="n">l</span><span class="p">.</span><span class="nf">lookback</span>
+<span class="n">l</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="nb">p</span> <span class="s2">"k=</span><span class="si">#{</span><span class="n">k</span><span class="o">+</span><span class="mi">2</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">p</span> <span class="n">b</span>
+<span class="k">end</span></code></pre></figure>
+
+<ul>
+<li>indicator</li>
+</ul>
+
+<p><a href="https://github.com/mlamby/indicator">https://github.com/mlamby/indicator</a></p>
+
+<p>Provides a wrapper around the talib-ruby library which is a ruby wrapper for the ta-lib library.</p>
+
+<p>This library has been designed to make interfacing with the ta-lib functions easy by wrapping each function in a ruby class.</p>
+
+<p>The wrappers are autogenerated from the xml function description provided with the ta-lib project.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="nb">require</span> <span class="s1">'indicator/mixin'</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="nf">indicator</span><span class="p">(</span><span class="ss">:sma</span><span class="p">,</span> <span class="ss">:time_period</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="nf">indicator</span><span class="p">(</span><span class="ss">:sma</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="nf">indicator</span><span class="p">(</span><span class="ss">:sma_5</span><span class="p">)</span></code></pre></figure>
+
+<ul>
+<li>signal tools</li>
+</ul>
+
+<p>Gem with technical analysis indicators data.</p>
+
+<p>Didn’t work for me with newer versions of Ruby (2.2, 2.1) but there’s plenty of code that you can use for your own scripts even though the gem as a whole might be not usable.</p>
+
+<p><a href="https://github.com/whitethunder/signal_tools">https://github.com/whitethunder/signal_tools</a></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#https://github.com/whitethunder/signal_tools/blob/master/lib/signal_tools/technicals/ema.rb</span>
+
+<span class="k">module</span> <span class="nn">SignalTools::Technicals</span>
+<span class="k">class</span> <span class="nc">EMA</span>
+<span class="kp">include</span> <span class="no">Common</span>
+
+<span class="no">EMA_DEFAULT</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="kp">attr_reader</span> <span class="ss">:data</span><span class="p">,</span> <span class="ss">:period</span><span class="p">,</span> <span class="ss">:type</span>
+
+<span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="ss">:default</span><span class="p">)</span>
+<span class="vi">@data</span> <span class="o">=</span> <span class="n">data</span>
+<span class="vi">@period</span> <span class="o">=</span> <span class="n">period</span>
+<span class="vi">@type</span> <span class="o">=</span> <span class="n">type</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">calculate</span>
+<span class="n">ema_points</span>
+<span class="k">end</span></code></pre></figure>
+
+<h2 id="exchange-api-gems">Exchange API gems</h2>
+
+<p>Bitfinex <a href="https://github.com/bitfinexcom/bitfinex-api-rb">https://github.com/bitfinexcom/bitfinex-api-rb</a></p>
+
+<p>Okcoin <a href="https://github.com/ilyacherevkov/okcoin-ruby">https://github.com/ilyacherevkov/okcoin-ruby</a> (needs update though!!)</p>
+
+<p>Poloniex <a href="https://github.com/Lowest0ne/poloniex">https://github.com/Lowest0ne/poloniex</a></p>
+
+<p>HitBTC <a href="https://github.com/jhk753/hitbtc_ruby">https://github.com/jhk753/hitbtc_ruby</a></p>
+
+<p>BitTrex <a href="https://github.com/mwerner/bittrex">https://github.com/mwerner/bittrex</a></p>
+
+<p><br /></p>
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			
+				<li><a href="https://cryptotradingtools.com/categories/#trading-ref">
+					trading <span>(6)</span>
+					,
+				</a></li>
+			
+				<li><a href="https://cryptotradingtools.com/categories/#bots-ref">
+					bots <span>(3)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			
+				<li>
+					<a href="https://cryptotradingtools.com/tags/#ruby-ref">
+					ruby <span>(3)</span>
+					,
+					</a>
+				</li>
+			
+				<li>
+					<a href="https://cryptotradingtools.com/tags/#bots-ref">
+					bots <span>(5)</span>
+					,
+					</a>
+				</li>
+			
+				<li>
+					<a href="https://cryptotradingtools.com/tags/#charting-ref">
+					charting <span>(4)</span>
+					,
+					</a>
+				</li>
+			
+				<li>
+					<a href="https://cryptotradingtools.com/tags/#ta-ref">
+					ta <span>(1)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=(Ruby) Bitcoin Trading Bots in Ruby&via=tradingfanbois"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fa fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
+        <h4 class="section-title author-name">Trading Fanbois</h4>
+        <p class="author-bio">Repo with tools and scripts for bitcoin and altcoin trading.</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="https://cryptotradingtools.com/qt-bitcoin-trading/" title="Qt free bitcoin trading platform">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="https://cryptotradingtools.com/scrape-highcharts/" title="(R) How to scrape highcharts">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+
+	<div class="col-sm-2 sidebar-2">
+
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				1HunGrY83J2yN9KYkURziNJtVcsvoXW4iP || &copy; 2016-2017 <a target="_blank" href="https://bestbitcoinexchange.co">Trading Fanbois</a> 
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="https://cryptotradingtools.com/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cryptotradingtools.com/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cryptotradingtools.com/assets/js/app.js"></script>
+
+</body>
+</html>
+
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71937981-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
