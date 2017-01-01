@@ -22,7 +22,7 @@
 	 </span>
 	  <div class="article_body">
 
-      <p><a target="_blank" href="{{page.repo}}" class="btn btn-down"><i class="fa fa-github fa-lg"></i> Download sourcecode</a></p>
+      {% if page.repo %}<p><a target="_blank" href="{{page.repo}}" class="btn btn-down"><i class="fa fa-github fa-lg"></i> Download sourcecode</a></p>{% endif %}
 
 	  {{ content }}
 	  </div>
